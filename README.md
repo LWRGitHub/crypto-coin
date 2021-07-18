@@ -33,5 +33,3 @@ truffle build
 ```
 npm run dev
 ```
-
-

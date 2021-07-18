@@ -42,10 +42,13 @@ const App = {
     },
     _mint: async function (amount) {
         // Fetch the balanceOf method from our contract.
-        const { _mint } = this.cryptoContract.methods;
+        const { _mint2 } = this.cryptoContract.methods;
 
         // Fetch crypto amount by calling balanceOf in our contract.
-        const mint = await _mint(this.account, amount).call();
+        const mint = await _mint2(this.account, amount).call();
+        // const mint = await _mint2(amount).send({ from: this.account })
+
+        console.log("-----HERE----", mint, _mint2)
 
         // Update the page using jQuery.
         $('#balance').html(mint);
